@@ -3,18 +3,23 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { RootComponent } from './app.component';
+import { DropDownService } from "app/service/drop-down.service";
+import { CapitalPipe } from './capital.pipe';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    RootComponent,
+    CapitalPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DropDownService],
+  bootstrap: [RootComponent]
 })
 export class AppModule { }
